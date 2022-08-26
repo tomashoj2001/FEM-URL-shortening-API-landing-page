@@ -14,14 +14,6 @@ const $form = d.querySelector('form'),
   $action = d.querySelector('.action'),
   $template = d.querySelector('template').content;
 
-function copyToClipboard () {
-  console.log(this)
-  e.preventDefault()
-  let linkToCopy = this.dataset.link;
-
-  console.log(linkToCopy)
-}
-
 async function getShorterLink() {
   if (!$input.value) {
     $input.classList.add('error')    
@@ -50,7 +42,12 @@ async function getShorterLink() {
     $span.classList.remove('error')
 
     let $templateBtn = [...d.querySelectorAll('.copy-link')]
-    $templateBtn.forEach(el => el.addEventListener('click', e => copyToClipboard(e)))
+    $templateBtn.forEach(el => el.addEventListener('click', e => {
+      e.preventDefault()
+      navigator.clipboard.writeText(shortedLink)
+      e.target.innerText = 'Copied'
+      e.target.style.backgroundColor = 'var(--Neutral-Very-Dark-Blue)'
+    }))
 
   } catch (err) {
     let message = err.statusText || 'Ups... something went wrong!'
