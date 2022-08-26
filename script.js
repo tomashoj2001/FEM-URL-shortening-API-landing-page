@@ -47,8 +47,8 @@ async function getShorterLink() {
 
       $templateBtn.map(item => {
         if (item === e.target) {
-          e.target.innerText = 'Copied!'
-          e.target.style.backgroundColor = 'var(--Primary-Dark-Violet)'
+          item.innerText = 'Copied!'
+          item.style.backgroundColor = 'var(--Primary-Dark-Violet)'
           navigator.clipboard.writeText(item.dataset.link)
         } else {
           item.innerHTML = 'Copy'
