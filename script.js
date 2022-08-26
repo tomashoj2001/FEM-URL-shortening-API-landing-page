@@ -14,14 +14,6 @@ const $form = d.querySelector('form'),
   $action = d.querySelector('.action'),
   $template = d.querySelector('template').content;
 
-// function copyToClipboard (event) {
-//   console.log(event)
-//   event.preventDefault()
-//   let linkToCopy = event.target.dataset.link;
-
-//   console.log(linkToCopy)
-// }
-
 async function getShorterLink() {
   if (!$input.value) {
     $input.classList.add('error')    
