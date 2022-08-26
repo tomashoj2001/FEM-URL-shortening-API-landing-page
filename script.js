@@ -14,6 +14,14 @@ const $form = d.querySelector('form'),
   $action = d.querySelector('.action'),
   $template = d.querySelector('template').content;
 
+// function copyToClipboard (event) {
+//   console.log(event)
+//   event.preventDefault()
+//   let linkToCopy = event.target.dataset.link;
+
+//   console.log(linkToCopy)
+// }
+
 async function getShorterLink() {
   if (!$input.value) {
     $input.classList.add('error')    
@@ -44,9 +52,17 @@ async function getShorterLink() {
     let $templateBtn = [...d.querySelectorAll('.copy-link')]
     $templateBtn.forEach(el => el.addEventListener('click', e => {
       e.preventDefault()
-      navigator.clipboard.writeText(shortedLink)
-      e.target.innerText = 'Copied'
-      e.target.style.backgroundColor = 'var(--Neutral-Very-Dark-Blue)'
+
+      $templateBtn.map(item => {
+        if (item === e.target) {
+          e.target.innerText = 'Copied'
+          e.target.style.backgroundColor = 'var(--Primary-Dark-Violet)'
+          navigator.clipboard.writeText(item.dataset.link)
+        } else {
+          item.innerHTML = 'Copy'
+          item.style.backgroundColor = 'var(--Primary-Cyan)'
+        }
+      })
     }))
 
   } catch (err) {
