@@ -384,7 +384,7 @@ footer > svg {
   color: var(--Neutral-Very-Dark-Violet);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .before-bar::before {
     content: "";
     display: block;
@@ -398,7 +398,7 @@ footer > svg {
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 750px) {
   html {
     overflow-x: hidden;
   }
@@ -608,9 +608,6 @@ footer > svg {
     display: grid;
     grid-template-columns: 1fr 20% 8%;
   }
-  /* .result * {
-    margin: auto 0;
-  } */
   .long-link {
     margin: auto;
     padding: 0;
