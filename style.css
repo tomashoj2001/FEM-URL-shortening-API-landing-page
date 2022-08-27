@@ -399,7 +399,7 @@ footer > svg {
 }
 
 @media screen and (min-width: 500px) {
-  body {
+  html {
     overflow-x: hidden;
   }
   nav {
@@ -408,6 +408,7 @@ footer > svg {
     margin: auto;
     display: grid;
     grid-template-columns: min-content 1fr;
+    gap: 2rem;
   }
       /* DROPDOWN MENU */
   .hamburger-btn {
@@ -575,6 +576,49 @@ footer > svg {
     padding: 4rem 7.5vw;
     display: grid;
     width: 100%;
-    grid-template-columns: 33% 1fr 1fr 1fr 33%;
+    grid-template-columns: 33% 1fr 1fr 1fr 20%;
+  }
+  footer > svg {
+    margin: 0;
+  }
+  .about {
+    margin: 0 .5rem;
+    text-align: left;
+  }  
+  .about > h3 {
+    margin: 0 auto 1rem;
+  }
+  .about > a {
+    margin-left: 0;
+    padding: .5rem 0;
+  }
+  .social > svg {
+    margin: .5rem 1rem;
+    transform: scale(1.5);
+  }
+  .attribution {
+    width: 85vw;
+    position: relative;
+    top: 3rem;
+  }
+      /* TEMPLATES */
+  .result {
+    width: 85%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 20% 8%;
+  }
+  /* .result * {
+    margin: auto 0;
+  } */
+  .long-link {
+    margin: auto;
+    padding: 0;
+    border: none;
+  }
+  .short-link {
+    margin: auto 0;
+    padding: 0;
+    text-align: right;
   }
 }
